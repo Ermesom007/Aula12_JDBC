@@ -20,6 +20,7 @@
                 <th>ID</th>
                 <th>Nome</th>
                 <th>E-mail</th>
+                <th>Compras </th>
             </tr>
             <%try{%>
                 <%for(Customer c: Customer.getList()){%>
@@ -27,6 +28,7 @@
                     <td><%= c.getId()%></td>
                     <td><%=c.getName()%></td>
                     <td><%=c.getEmail()%></td>
+                    <td><a href="<%=request.getContextPath()%>/purchase.jsp?costumer_id=<%= c.getId()%>">Visualizar</a></td>
                    <%}%>
             <%}catch(Exception e){ %>
                 <tr>
